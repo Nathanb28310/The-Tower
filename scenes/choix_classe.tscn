@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://d27rcbskbwx4v"]
+
+[ext_resource type="Texture2D" uid="uid://duxud6j4kf07s" path="res://assets/icon.svg" id="1_fjnom"]
+[ext_resource type="Script" uid="uid://dmqvrkg6nu7xl" path="res://scripts/choix_classe.gd" id="1_lq0t4"]
+
+[node name="Choix classe" type="Control" unique_id=594246718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lq0t4")
+
+[node name="Texte" type="Label" parent="." unique_id=1665460768]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -445.0
+offset_top = 151.0
+offset_right = 446.0
+offset_bottom = 206.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Veuillez, noble aventurier choisir votre classe :"
+
+[node name="buttons classes" type="HBoxContainer" parent="." unique_id=1293929823]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -840.0
+offset_top = -73.0
+offset_right = 840.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Classe Nathan" type="VBoxContainer" parent="buttons classes" unique_id=308601705]
+layout_mode = 2
+
+[node name="img Nathan" type="TextureRect" parent="buttons classes/Classe Nathan" unique_id=734489677]
+layout_mode = 2
+texture = ExtResource("1_fjnom")
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="buttons classes/Classe Nathan" unique_id=1360025900]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Nathan" type="Button" parent="buttons classes/Classe Nathan" unique_id=23532081]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Choisir la classe : 
+Nathan"
+
+[node name="Classe Paul" type="VBoxContainer" parent="buttons classes" unique_id=1006083800]
+layout_mode = 2
+
+[node name="img Paul" type="TextureRect" parent="buttons classes/Classe Paul" unique_id=1969418204]
+layout_mode = 2
+texture = ExtResource("1_fjnom")
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="buttons classes/Classe Paul" unique_id=1812947182]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Paul" type="Button" parent="buttons classes/Classe Paul" unique_id=315951263]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Choisir la classe : 
+Paul"
+
+[node name="Classe Baptiste" type="VBoxContainer" parent="buttons classes" unique_id=13026472]
+layout_mode = 2
+
+[node name="img Baptiste" type="TextureRect" parent="buttons classes/Classe Baptiste" unique_id=1086721382]
+layout_mode = 2
+texture = ExtResource("1_fjnom")
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="buttons classes/Classe Baptiste" unique_id=130886298]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Baptiste" type="Button" parent="buttons classes/Classe Baptiste" unique_id=1203724786]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Choisir la classe : 
+Baptiste"
+
+[node name="Classe Maëlle" type="VBoxContainer" parent="buttons classes" unique_id=1701359091]
+layout_mode = 2
+
+[node name="img Maëlle" type="TextureRect" parent="buttons classes/Classe Maëlle" unique_id=737452148]
+layout_mode = 2
+texture = ExtResource("1_fjnom")
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="buttons classes/Classe Maëlle" unique_id=174377374]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Maëlle" type="Button" parent="buttons classes/Classe Maëlle" unique_id=962522733]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Choisir la classe : 
+Maëlle"
+
+[connection signal="button_down" from="buttons classes/Classe Nathan/Nathan" to="." method="_on_nathan_button_down"]
+[connection signal="button_down" from="buttons classes/Classe Paul/Paul" to="." method="_on_paul_button_down"]
+[connection signal="button_down" from="buttons classes/Classe Baptiste/Baptiste" to="." method="_on_baptiste_button_down"]
+[connection signal="button_down" from="buttons classes/Classe Maëlle/Maëlle" to="." method="_on_maëlle_button_down"]

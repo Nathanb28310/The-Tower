@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d3roov73jxcd8"]
+
+[ext_resource type="Script" uid="uid://c3ppvp1qq5vo2" path="res://scripts/sortie.gd" id="1_3evtq"]
+
+[sub_resource type="Gradient" id="Gradient_g62dx"]
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3evtq"]
+gradient = SubResource("Gradient_g62dx")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnb7y"]
+size = Vector2(88, 88)
+
+[node name="Sortie" type="Area2D" unique_id=2076126226]
+script = ExtResource("1_3evtq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1178478610]
+texture = SubResource("GradientTexture2D_3evtq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1804750354]
+shape = SubResource("RectangleShape2D_hnb7y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

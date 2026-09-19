@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cwii7tiqsvai0"]
+
+[ext_resource type="Script" uid="uid://neuagua1c4ka" path="res://scripts/level.gd" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://hdmm2o8i7fui" path="res://scenes/player.tscn" id="2_w8frs"]
+
+[node name="Level" type="Node2D" unique_id=166774637]
+script = ExtResource("1_w7c3h")
+
+[node name="Player" parent="." unique_id=1788849664 instance=ExtResource("2_w8frs")]
+position = Vector2(960, 813)
+
+[node name="position portail" type="Marker2D" parent="." unique_id=562507519]
+position = Vector2(960, 100)
+
+[node name="position monstre" type="Marker2D" parent="." unique_id=2025145637]
+position = Vector2(960, 540)
+
+[node name="spawn joueur" type="Marker2D" parent="." unique_id=1484355893]
+position = Vector2(960, 813)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=434876919]
+
+[node name="message" type="Panel" parent="CanvasLayer" unique_id=1795010410]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -157.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="message" type="Label" parent="CanvasLayer/message" unique_id=662159191]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Hello world"
+autowrap_mode = 3
+
+[node name="Etage" type="Label" parent="CanvasLayer" unique_id=1227759572]
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 185.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 34
+text = "Étage n°X"
+
+[node name="action" type="VBoxContainer" parent="CanvasLayer" unique_id=1644375473]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -55.5
+offset_right = 86.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="reprendre" type="Button" parent="CanvasLayer/action" unique_id=2007519477]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Reprendre"
+
+[node name="sauvegarder et quitter" type="Button" parent="CanvasLayer/action" unique_id=2137184162]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Sauvegarder
+et Quitter"
+
+[node name="ambiance" type="AudioStreamPlayer2D" parent="." unique_id=369528613]
+
+[connection signal="button_down" from="CanvasLayer/action/reprendre" to="." method="_on_reprendre_button_down"]
+[connection signal="button_down" from="CanvasLayer/action/sauvegarder et quitter" to="." method="_on_sauvegarder_et_quitter_button_down"]

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://curlqt7dtaggc"]
+
+[ext_resource type="Script" uid="uid://dlikf5tpgf533" path="res://scripts/menu_principal.gd" id="1_i85hu"]
+
+[node name="Menu principal" type="Control" unique_id=711678083]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i85hu")
+
+[node name="Fond" type="TextureRect" parent="." unique_id=535775294]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nom jeu" type="Label" parent="." unique_id=2060525075]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -274.0
+offset_right = 202.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "The Tower"
+
+[node name="boutons" type="VBoxContainer" parent="." unique_id=417768842]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = 62.0
+offset_right = 245.0
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Start" type="Button" parent="boutons" unique_id=929496311]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Commencer"
+
+[node name="Reprendre la partie" type="Button" parent="boutons" unique_id=357419072]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Reprendre la partie"
+
+[node name="Crédit" type="Button" parent="boutons" unique_id=1540233724]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Crédit"
+
+[node name="Quit" type="Button" parent="boutons" unique_id=1896900508]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quitter"
+
+[connection signal="button_down" from="boutons/Start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="boutons/Reprendre la partie" to="." method="_on_reprendre_la_partie_button_down"]
+[connection signal="button_down" from="boutons/Quit" to="." method="_on_quit_button_down"]

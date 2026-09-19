@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://b5ildvwbehpfy"]
+
+[ext_resource type="Script" uid="uid://bd47der57waws" path="res://scripts/menu_mort.gd" id="1_bt460"]
+
+[node name="Menu mort" type="Control" unique_id=1268600354]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bt460")
+
+[node name="fond" type="TextureRect" parent="." unique_id=559931989]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="texte" type="VBoxContainer" parent="." unique_id=621465132]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -205.0
+offset_right = 207.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game over" type="Label" parent="texte" unique_id=1782460650]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Tu es mort"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score" type="Label" parent="texte" unique_id=125106257]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Tu as monté X étages"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="boutons" type="VBoxContainer" parent="." unique_id=1456870421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = 63.5
+offset_right = 167.5
+offset_bottom = 230.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu principal" type="Button" parent="boutons" unique_id=408005749]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Menu principal"
+
+[node name="crédit" type="Button" parent="boutons" unique_id=955003397]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Crédit"
+
+[node name="quitter" type="Button" parent="boutons" unique_id=865405188]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quitter"
+
+[connection signal="button_down" from="boutons/Menu principal" to="." method="_on_menu_principal_button_down"]
+[connection signal="button_down" from="boutons/crédit" to="." method="_on_crédit_button_down"]
+[connection signal="button_down" from="boutons/quitter" to="." method="_on_quitter_button_down"]

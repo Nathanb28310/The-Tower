@@ -1,0 +1,532 @@
+[gd_scene format=3 uid="uid://caty3d5w45wk4"]
+
+[ext_resource type="Script" uid="uid://dek1hxe5k8dvh" path="res://scripts/combat.gd" id="1_764e3"]
+[ext_resource type="FontFile" uid="uid://0qi7tynmi8d6" path="res://assets/determination.ttf" id="2_aic3r"]
+[ext_resource type="Texture2D" uid="uid://duxud6j4kf07s" path="res://assets/icon.svg" id="2_qajva"]
+[ext_resource type="AudioStream" uid="uid://bsyl4cfp8pyyl" path="res://assets/sons/attack-blocked.wav" id="4_p71o4"]
+[ext_resource type="AudioStream" uid="uid://bijrvvmpgslrj" path="res://assets/sons/slash-rpg.wav" id="5_p71o4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qajva"]
+bg_color = Color(1, 0, 0.016666412, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aic3r"]
+bg_color = Color(0.03529412, 0.70980394, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcae8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osi8t"]
+bg_color = Color(0.6, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8we11"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrcy2"]
+bg_color = Color(0, 0.8898153, 1.0039686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gnb8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sa5k0"]
+bg_color = Color(0.6, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_qajva"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4l26h"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p71o4"]
+bg_color = Color(2.695322e-06, 0.6614527, 0.8374571, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Combat" type="Control" unique_id=76882887]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_764e3")
+
+[node name="Fond" type="TextureRect" parent="." unique_id=1709227970]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="monstre" type="VBoxContainer" parent="." unique_id=453721650]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -160.0
+offset_right = 100.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="nom monstre" type="Label" parent="monstre" unique_id=1448896757]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "Adonis"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="vie monstre" type="ProgressBar" parent="monstre" unique_id=307107436]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_stretch_ratio = 20.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qajva")
+theme_override_styles/fill = SubResource("StyleBoxFlat_aic3r")
+max_value = 0.0
+allow_greater = true
+show_percentage = false
+
+[node name="vie monstre" type="Label" parent="monstre/vie monstre" unique_id=2071359571]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_aic3r")
+theme_override_font_sizes/font_size = 32
+text = "PV = X/X"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="saignement monstre" type="ProgressBar" parent="monstre" unique_id=326818480]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_vcae8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_osi8t")
+max_value = 0.0
+allow_greater = true
+show_percentage = false
+
+[node name="saignement monstre" type="Label" parent="monstre/saignement monstre" unique_id=1221074257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Saignement : X%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="monstre" type="TextureRect" parent="monstre" unique_id=1918899642]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_qajva")
+stretch_mode = 4
+
+[node name="Action" type="Panel" parent="." unique_id=260160461]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.86500007
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -47.200073
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="UI joueur" type="HBoxContainer" parent="Action" unique_id=727892408]
+layout_mode = 0
+offset_left = 243.0
+offset_right = 954.0
+offset_bottom = 152.0
+theme_override_constants/separation = 20
+
+[node name="barre PA" type="ProgressBar" parent="Action/UI joueur" unique_id=103377984]
+custom_minimum_size = Vector2(40, 125)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_8we11")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hrcy2")
+max_value = 5.0
+allow_greater = true
+fill_mode = 3
+show_percentage = false
+
+[node name="barre PA" type="Label" parent="Action/UI joueur/barre PA" unique_id=1540583025]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="info joueur" type="VBoxContainer" parent="Action/UI joueur" unique_id=1685364136]
+layout_mode = 2
+theme_override_constants/separation = -10
+
+[node name="Pseudo" type="Label" parent="Action/UI joueur/info joueur" unique_id=1197125519]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Nathan"
+
+[node name="Niveau" type="Label" parent="Action/UI joueur/info joueur" unique_id=1639132647]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Niveau : X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PA" type="Label" parent="Action/UI joueur/info joueur" unique_id=2013696719]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "PA : X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Barre joueur" type="VBoxContainer" parent="Action/UI joueur" unique_id=1462868216]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="vie joueur" type="ProgressBar" parent="Action/UI joueur/Barre joueur" unique_id=1975773513]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_qajva")
+theme_override_styles/fill = SubResource("StyleBoxFlat_aic3r")
+value = 100.0
+allow_greater = true
+allow_lesser = true
+show_percentage = false
+
+[node name="vie joueur" type="Label" parent="Action/UI joueur/Barre joueur/vie joueur" unique_id=844110421]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PV = X/X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="saignement joueur" type="ProgressBar" parent="Action/UI joueur/Barre joueur" unique_id=2114156661]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_4gnb8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sa5k0")
+max_value = 0.0
+allow_greater = true
+show_percentage = false
+
+[node name="saignement joueur" type="Label" parent="Action/UI joueur/Barre joueur/saignement joueur" unique_id=1908888412]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_aic3r")
+text = "Saignement : X%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="xp" type="ProgressBar" parent="Action/UI joueur/Barre joueur" unique_id=272881812]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_qajva")
+theme_override_styles/background = SubResource("StyleBoxFlat_4l26h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_p71o4")
+value = 100.0
+show_percentage = false
+
+[node name="xp joueur" type="Label" parent="Action/UI joueur/Barre joueur/xp" unique_id=1453384351]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_aic3r")
+text = "Exp = X/X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="boutons" type="HBoxContainer" parent="Action" unique_id=95602911]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -913.0
+offset_right = -62.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="attaque" type="Button" parent="Action/boutons" unique_id=1067860123]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Attaque
+(1 PA)"
+
+[node name="capacité" type="Button" parent="Action/boutons" unique_id=192685922]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Capacité
+"
+
+[node name="inventaire" type="Button" parent="Action/boutons" unique_id=985921668]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Inventaire
+(2 PA)
+"
+
+[node name="passer" type="Button" parent="Action/boutons" unique_id=325282680]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Passer le tour"
+
+[node name="Message" type="Label" parent="Action" unique_id=418031883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1058.0
+offset_top = 18.0
+offset_right = -148.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Hello world"
+autowrap_mode = 3
+
+[node name="position texte" type="Marker2D" parent="Action" unique_id=570543627]
+position = Vector2(126, 81)
+
+[node name="LineEdit" type="LineEdit" parent="Action" unique_id=1124539380]
+layout_mode = 0
+offset_left = 1053.0
+offset_top = 20.0
+offset_right = 1918.0
+offset_bottom = 150.0
+
+[node name="Action nécromantien" type="Panel" parent="." unique_id=1870834519]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -958.0
+offset_top = 212.0
+offset_right = 958.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="capa monstre" type="HBoxContainer" parent="Action nécromantien" unique_id=75126497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Âme 1" type="Button" parent="Action nécromantien/capa monstre" unique_id=1414346413]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Ogre (x 0)"
+
+[node name="Âme 2" type="Button" parent="Action nécromantien/capa monstre" unique_id=1488290226]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Araignée (x 0)"
+
+[node name="Âme 3" type="Button" parent="Action nécromantien/capa monstre" unique_id=1022408456]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Squelette (x 0)"
+
+[node name="Action inventaire" type="Panel" parent="." unique_id=1037520030]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -958.0
+offset_top = 212.0
+offset_right = 958.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="objet inventaire" type="HBoxContainer" parent="Action inventaire" unique_id=468243244]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Objet 1" type="Button" parent="Action inventaire/objet inventaire" unique_id=987970930]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Vide
+"
+
+[node name="Objet 2" type="Button" parent="Action inventaire/objet inventaire" unique_id=1363141403]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Vide"
+
+[node name="Objet 3" type="Button" parent="Action inventaire/objet inventaire" unique_id=1909080429]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Vide"
+
+[node name="Objet 4" type="Button" parent="Action inventaire/objet inventaire" unique_id=538504277]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Vide"
+
+[node name="Objet 5" type="Button" parent="Action inventaire/objet inventaire" unique_id=504281045]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Vide"
+
+[node name="Objet 6" type="Button" parent="Action inventaire/objet inventaire" unique_id=1022339583]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Vide"
+
+[node name="Contrat" type="Panel" parent="." unique_id=916194702]
+layout_mode = 0
+offset_left = 1155.0
+offset_top = 27.0
+offset_right = 1805.0
+offset_bottom = 714.0
+
+[node name="Label" type="Label" parent="Contrat" unique_id=223775432]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 40
+text = "Contrat :
+
+Proposition :
+Puissance en plus
+
+Contrainte :
+Plus de dégats"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Son parade" type="AudioStreamPlayer2D" parent="." unique_id=826280400]
+stream = ExtResource("4_p71o4")
+
+[node name="Son attaque" type="AudioStreamPlayer2D" parent="." unique_id=1024513342]
+stream = ExtResource("5_p71o4")
+
+[node name="musique combat" type="AudioStreamPlayer2D" parent="." unique_id=546116565]
+
+[connection signal="button_down" from="Action/boutons/attaque" to="." method="_on_attaque_button_down"]
+[connection signal="button_down" from="Action/boutons/capacité" to="." method="_on_capacité_button_down"]
+[connection signal="button_down" from="Action/boutons/inventaire" to="." method="_on_inventaire_button_down"]
+[connection signal="button_down" from="Action/boutons/passer" to="." method="_on_passer_button_down"]
+[connection signal="button_down" from="Action nécromantien/capa monstre/Âme 1" to="." method="_on_ame_button_down" binds= [0]]
+[connection signal="button_down" from="Action nécromantien/capa monstre/Âme 2" to="." method="_on_ame_button_down" binds= [1]]
+[connection signal="button_down" from="Action nécromantien/capa monstre/Âme 3" to="." method="_on_ame_button_down" binds= [2]]
+[connection signal="button_down" from="Action inventaire/objet inventaire/Objet 1" to="." method="_on_objet_button_down" binds= [0]]
+[connection signal="button_down" from="Action inventaire/objet inventaire/Objet 2" to="." method="_on_objet_button_down" binds= [1]]
+[connection signal="button_down" from="Action inventaire/objet inventaire/Objet 3" to="." method="_on_objet_button_down" binds= [2]]
+[connection signal="button_down" from="Action inventaire/objet inventaire/Objet 4" to="." method="_on_objet_button_down" binds= [3]]
+[connection signal="button_down" from="Action inventaire/objet inventaire/Objet 5" to="." method="_on_objet_button_down" binds= [4]]
+[connection signal="button_down" from="Action inventaire/objet inventaire/Objet 6" to="." method="_on_objet_button_down" binds= [5]]
